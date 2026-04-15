@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Marine Dark Theme - Carnelian Style */
+    --background: 200 80% 4%;
+    --foreground: 0 0% 100%;
+    --card: 200 70% 6%;
+    --card-foreground: 0 0% 100%;
+    --popover: 200 70% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 195 60% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 195 60% 15%;
+    --muted-foreground: 195 60% 70%;
+    --accent: 165 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 187 100% 20%;
+    --input: 187 100% 20%;
+    --ring: 187 100% 50%;
+    --radius: 0.75rem;
+    --sidebar-background: 200 70% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 195 60% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 187 100% 20%;
+    --sidebar-ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 14px;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Orbitron', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #021019;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #00eaff55;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00eaff88;
+  }
+
+  /* Input font size - smaller for mobile */
+  input, select, textarea {
+    font-size: 13px !important;
+  }
+
+  /* Label font size */
+  label {
+    font-size: 11px !important;
+  }
+
+  /* Button font size */
+  button {
+    font-size: 12px !important;
+  }
+}
+
+@layer components {
+  /* Card styling - compact */
+  .carnelian-card {
+    @apply bg-[#021019] rounded-lg p-3;
+    box-shadow: 0 0 10px #00ffd522 inset;
+    border: 1px solid #00eaff33;
+  }
+  
+  /* Input styling - compact */
+  .carnelian-input {
+    @apply bg-[#000c14] text-white text-center rounded-md px-2 py-1.5;
+    border: none;
+    font-size: 13px;
+    height: 32px;
+  }
+  
+  .carnelian-input:focus {
+    outline: 1px solid #00eaff55;
+  }
+  
+  /* Button styling - compact */
+  .carnelian-btn {
+    @apply px-3 py-2 rounded-lg font-medium text-xs transition-all;
+    background: #0a2a3a;
+    color: #9fe9ff;
+    box-shadow: 0 0 8px #00eaff22 inset;
+  }
+  
+  .carnelian-btn:hover {
+    background: #0d3a4d;
+  }
+  
+  .carnelian-btn-primary {
+    @apply px-3 py-2 rounded-lg font-medium text-xs transition-all;
+    background: #00ff88;
+    color: #000;
+  }
+  
+  .carnelian-btn-primary:hover {
+    background: #00cc6a;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-sm font-semibold tracking-wide;
+    color: #00eaff;
+  }
+
+  /* Section subtitle */
+  .section-subtitle {
+    @apply text-[10px] tracking-wide;
+    color: #7feaff;
+  }
+
+  /* Result display - compact */
+  .result-display {
+    @apply text-lg font-bold;
+    color: #00ffd5;
+  }
+
+  /* Label text */
+  .label-text {
+    @apply text-[11px] font-medium;
+    color: #7fd3ff;
+  }
+
+  /* Unit text */
+  .unit-text {
+    @apply text-[10px];
+    color: #7feaff;
+  }
+}
+
+@layer utilities {
+  /* Glow effects */
+  .glow-cyan {
+    box-shadow: 0 0 20px #00eaff44;
+  }
+  
+  .glow-cyan-sm {
+    box-shadow: 0 0 10px #00ffd522 inset;
+  }
+  
+  /* Text gradients */
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #00eaff, #00ffd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Compact spacing */
+  .compact-gap {
+    gap: 0.5rem;
+  }
+
+  .compact-p {
+    padding: 0.75rem;
+  }
+
+  .compact-m {
+    margin: 0.5rem;
+  }
+}
+
+/* Animation for results */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+  20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}

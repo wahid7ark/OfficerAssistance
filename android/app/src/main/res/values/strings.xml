@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Asisten Officer</string>
+    <string name="title_activity_main">Asisten Officer</string>
+    <string name="package_name">com.arkdan.asistenofficer</string>
+    <string name="custom_url_scheme">com.arkdan.asistenofficer</string>
+</resources>

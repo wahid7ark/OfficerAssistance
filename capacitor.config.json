@@ -1,0 +1,20 @@
+{
+  "appId": "com.arkdan.asistenofficer",
+  "appName": "Asisten Officer",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0f172a"
+    }
+  },
+  "android": {
+    "buildOptions": {
+      "keystorePath": "",
+      "keystoreAlias": "",
+      "keystorePassword": "",
+      "keystoreKeyPassword": ""
+    }
+  }
+}
