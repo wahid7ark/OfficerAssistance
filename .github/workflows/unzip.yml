@@ -24,12 +24,16 @@ jobs:
       - name: Extract ZIP to root
         run: unzip -o 1.zip
 
-      - name: Fix permissions (important)
-        run: chmod -R 777 .
+      # 🔥 FIX PERMISSION DI SINI
+      - name: Fix file permissions
+        run: |
+          chmod -R 755 .
+          chmod -R u+rw .
 
       - name: Commit extracted files (safe)
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add -A
-          git
+          git add . ':!1.zip' ':!.github/workflows/*'
+          git commit -m "Extract ZIP into repository" || echo "No changes"
+          git push
